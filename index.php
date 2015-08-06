@@ -102,16 +102,23 @@
 				
 				}
 				
-
+					a {
+				color: #fff;
+				
+				}
+				a.visited { color: #fff;}
 				
         </style>
         
 </head>
-<a href="../">Home</a><br>
+<div class="link">
+                                <a href="admin/index.php">Admin Home</a> 
+                        </div>
 <b>Snyder Lance Product Search</b>
 
 
 <div class="main">
+
 
        <img src="http://www.snyderslance.com/images/logo.png">
         <table><tr><td><br />
@@ -126,6 +133,7 @@
 		<td id="information">
 		    
 			<b>Search Help:<br></b>
+			NEW! Look up using UPC now working!<br>
 			Humpty = HD<br>
 			Natures Place = NP<br>
 			Hannaford= Hann<br>

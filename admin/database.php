@@ -1,80 +1,70 @@
+
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1" /> 
-        <!--
-                =================================================================================================
-                Created and updated on August 2, 2015
-				Repository path:    $HeadURL$
-                Last committed:     $Revision: 45 $
-                Last changed by:    $Author: davidjmorin@gmail.com $
-                Last changed date:    $Date: 2012-07-02 21:10:12 -0400 (Mon, 02 Jul 2012) $
-                ID:            $Id: index.php 45 2012-07-03 01:10:12Z davidjmorin@gmail.com $
-                =================================================================================================
-        --> 
-		
-		<?php
-        include 'config/config.php';
-		
-?>  
         <style type="text/css">
-                body {background-color:#510000;}
-                th {background-color: #690b06;}
+                body {background-color:#510000;
+				color: #fff;
+				}
+                th {background: URL(http://www.athenahealth.com/_img/boxes/carousel_bg.png);}
                 p {color:blue;}
-                table#products {
+                table {
                 table-layout:fixed
                 width:400px;
                 }
                 td#key {
-                border:1px solid yellow;
-				font-size: 12px;
-				width: 60px;
+                width:25%;
+                border:1px solid red;
                 }
                 td#bl {
-				color: #fff;
-				font-size: 12px;
-                border:1px solid yellow;
-				width: 50px;
+                width:25%;
+                border:1px solid red;
                 }
                 td#ph {
-                border:1px solid white;
-				font-size: 12px;
+                width:50%;
+                border:1px solid red;
                 }
-				
-				td#case {
-                border:1px solid white;
-				font-size: 12px;
-				width: 50px;
-                }
-				
-				td#ounces {
-                border:1px solid white;
-				font-size: 12px;
-				width: 50px;
-                }
-				
-				td#retail {
-                border:1px solid white;
-				font-size: 12px;
-				width: 50px;
-                }
-				
-				td#name {
-                border:1px solid white;
-                }
-				
                 td#reason {
-                border:1px solid yellow;
+                width:50%;
+                border:1px solid red;
                 }
-				
-				a { 
+				td#count {
+                color: #fff;
+                border:1px solid red;
+                }
+				.main {
+				background-color: #5f0500;
 				color: #fff;
 				}
 				
-				tr#top{
-				color: #000;
-				
+				tr#kw{
+				background-color: #5f0500;
+				color: #fff;
+				font-size: 10px;
 				}
 				
+				tr#kw{
+				background-color: #5f0500;
+				color: #fff;
+				font-size: 10px;
+				}
+				
+				td#information{
+				background-color: #5f0500;
+				color: #FFFF00;
+				font-size: 10px;
+				}
+				
+				div#more {
+				font-size: 10px;
+				
+				}
+					a {
+				color: #fff;
+				
+				}
+				a.visited { color: #fff;}
 
+				
         </style>
 </head>
 
@@ -83,7 +73,7 @@
 
 
 
-        
+         include '../config/config.php';
 
         
         
@@ -141,8 +131,9 @@
 						<td id="case">'.$data["Suggested_Retail"].'</td> 
 						<td id="ounces">'.$data["Item_Ounces"].'</td> 
                         <td id="retail">'.$data["Case_Pack"].'</td>
-						  <td id="name"><a target="_blank" href="https://itemmaster.com/search_field:'.$data["UPC"].'">'.$data["UPC"].'</td> ';
-                        
+						  <td id="name"><a target="_blank" href="https://itemmaster.com/search_field:'.$data["UPC"].'">'.$data["UPC"].'</td> 
+						  <td align="center" bgcolor="#006600"><a href="delete.php?id='.$data["keyword"].'" onclick="return confirm(\'This action cannot be reversed. Are you sure you want to delete?\')">Delete</a></td>
+                          <td align="center" bgcolor="#006600"><a href="update.php?id='.$data["Product_sku"].'&name='.$data["Name"].'&retail='.$data["Suggested_Retail"].'&ounces='.$data["Item_Ounces"].'&upc='.$data["UPC"].' ">update</a></td>';
                     
                         
                         
@@ -158,4 +149,3 @@
         
         ///////// END MAIN TABLE/////////////////////////       
 ?>
-

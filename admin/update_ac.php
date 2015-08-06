@@ -53,7 +53,7 @@
         $ounces=$_REQUEST['ounces'];
         
         
- include 'config/config.php';
+ include 'config.php';
         
         ############## Make the mysql connection ###########
         
